@@ -1,11 +1,13 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
-workflows:
-  test:
-    jobs:
+
+jobs:
+  build:
+    docker:
+      - image: cypress/base:14.17.0
+    steps:
       - cypress/run:
-          install: apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth xvfb
           install-browsers: true
           start-command: 'npm run start'
           cypress-command: 'npx cypress run --parallel --record --group all tests --browser chrome'
