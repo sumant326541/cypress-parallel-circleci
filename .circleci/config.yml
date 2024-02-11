@@ -1,14 +1,11 @@
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@3
-
-jobs:
-  build:
-    docker:
-      - image: cypress/base:14.17.0
-    steps:
+workflows:
+  test:
+    jobs:
       - cypress/run:
           install-browsers: true
           start-command: 'npm run start'
-          cypress-command: 'npx cypress run --parallel --record --group all tests --browser chrome'
+          cypress-command: 'npx cypress run --browser chrome --parallel --record --group all tests'
           parallelism: 3
