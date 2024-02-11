@@ -9,5 +9,5 @@ workflows:
           #start-command: 'npm run start'
           cypress-command: 'npx cypress run --browser chrome --parallel --record --group all tests'
           parallelism: 3
-          environment:
+          env:
             CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
