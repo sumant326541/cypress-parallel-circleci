@@ -7,4 +7,5 @@ workflows:
       - cypress/run:
           install-browsers: true
           start-command: 'npm run start'
-          cypress-command: 'npx cypress run --browser chrome'
+          cypress-command: 'npx cypress run --parallel --record --group all tests --browser chrome'
+          parallelism: 3
