@@ -1,0 +1,15 @@
+{
+  "name": "cypress-parallel-circleci",
+  "version": "1.0.0",
+  "description": "run test parallel using circle ci",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open"
+  },
+  "author": "Sumant Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.6.4"
+  }
+}
